@@ -3,16 +3,18 @@ import banner from '../../assets/banner.webp'
 const Banner = () => {
     return (
         <div>
-           <div className='position-relative' >
-           <img src={banner} alt="" className=' w-100 ' style={{height:'650px'}}/>
+           <div className='position-relative ' >
+           <img src={banner} alt="" style={{width:'100%',height:'100vh'}}/>
            </div>
-           <div className='position-absolute  ' style={{paddingLeft:'10%', paddingTop:'10%',top:'56px',width:'100%',height:'650px', backgroundColor:'rgba(0, 0, 0, 0.4)'} } >
-            <div className='text-white' >
-            <h1 style={{fontSize:'6.5rem'}}>Feel the </h1>
-            <h1 style={{fontSize:'6.5rem'}}>Authentic & </h1>
-            <h1 style={{fontSize:'6.5rem'}}> Original Taste</h1>
+           <div className='position-absolute' style={{width:'100%',height:'100vh', top:'56px',backgroundColor:'rgba(0, 0, 0, 0.4)'}} >
+            
+            <div>
+            <h1 className='text-white ' style={{fontSize:'6vw',marginLeft:'10vw',paddingTop:'150px'}}>Feel the </h1>
+            <h1 className='text-white ' style={{fontSize:'6vw',marginLeft:'10vw'}}>Authentic & </h1>
+            <h1 className='text-white ' style={{fontSize:'6vw',marginLeft:'10vw'}}>Original Taste</h1>
+          
+            <button className='btn btn-outline-light px-5 text-bold rounded-pill mt-4' style={{fontSize:'2vw',marginLeft:'10%'}}>See menu</button>
             </div>
-            <button className='btn btn-outline-light px-5 text-bold rounded-pill mt-4' style={{fontSize:'1.5rem'}}>See menu</button>
             
            </div>
         </div>
