@@ -19,9 +19,11 @@ const gitHubProvider= new GithubAuthProvider();
         }
     })
     const logInWithGoogle=()=>{
+        setLoading(true);
         return signInWithPopup(auth,provider);
     }
     const logInWithGithub=()=>{
+        setLoading(true);
         return signInWithPopup(auth,gitHubProvider);
     }
     const createUser=(email,password)=>{

@@ -1,4 +1,4 @@
-import {createBrowserRouter} from "react-router-dom";
+import {Navigate, createBrowserRouter} from "react-router-dom";
 import Main from "../layout/Main";
 import LoginLayout from "../layout/LoginLayout";
 import Login from "../Pages/loginRegister/login/Login";
@@ -7,6 +7,7 @@ import About from "../Pages/About/About";
 import Error from "../Pages/error/Error";
 import ChefRecipe from "../layout/ChefRecipe";
 import SingleChefRecipe from "../Pages/SingleChefRecipe/SingleChefRecipe";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -20,15 +21,16 @@ const router = createBrowserRouter([
         children:[
             {
                 path:':id',
-                element:<SingleChefRecipe></SingleChefRecipe>,
+                element:<PrivateRoute><SingleChefRecipe></SingleChefRecipe></PrivateRoute>,
                 loader:({params})=>fetch(`https://assignment-10-chef-table-server-mubasshirah.vercel.app/chef/${params.id}`)
             }
         ]
-    }
+    },
     {
         path:'/',
         element:<LoginLayout></LoginLayout>,
         children:[
+           
             {
                 path:'/login',
                 element:<Login></Login>
