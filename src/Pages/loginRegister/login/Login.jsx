@@ -1,30 +1,47 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FaFacebook, FaGithub } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../provider/AuthProvider';
 const Login = () => {
+    const {signInUser}=useContext(AuthContext);
+    const handdleSignIn=event=>{
+      
+        event.preventDefault();
+        const form=event.target;
+        const email=form.email.value;
+        const password=form.password.value;
+        signInUser(email,password)
+        .then(result=>{
+            const user=result.user;
+            console.log(user)
+          
+        })
+        .catch(err=>{
+            console.error(err)
+        })
+        form.reset()
+    }
     return (
         <div className='d-flex flex-column align-items-center pt-5'>
            <h1 className='text-center text-bold mt-5'>Please Login</h1>
            <div className='mb-5 mx-auto bg-dark text-white  p-4 d-inline-block'>
-           <Form>
+           <Form onSubmit={handdleSignIn}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
+        <Form.Control type="email" name="email" required placeholder="Enter email" />
+        
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
+        <Form.Control type="password" name='password' placeholder="Password" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
-      <Button variant="outline-light" type="submit">
+      <Button variant="outline-light" type="submit" >
         Login
       </Button>
     </Form>

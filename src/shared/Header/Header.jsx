@@ -6,6 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { Button } from 'react-bootstrap';
+import {  CgProfile} from "react-icons/cg";
 
 const Header = () => {
     const {user,logOutUser}=useContext(AuthContext);
@@ -32,7 +33,10 @@ const Header = () => {
                           
                           { user ?
                               
-                              <Button variant="secondary" onClick={handleLogOut}>Logout</Button>
+                             <div>
+                                <Button variant='outline-dark' className='me-5 text-white bg-dark'><CgProfile></CgProfile><span className='ms-1'>{user.displayName}</span> </Button>
+                                 <Button variant="secondary" onClick={handleLogOut}>Logout</Button>
+                             </div>
                               :
                               <Link  to="/login">
                               <Button variant="secondary">Login</Button>
