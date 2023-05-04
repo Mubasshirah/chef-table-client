@@ -8,11 +8,18 @@ import Error from "../Pages/error/Error";
 import ChefRecipe from "../layout/ChefRecipe";
 import SingleChefRecipe from "../Pages/SingleChefRecipe/SingleChefRecipe";
 import PrivateRoute from "./PrivateRoute";
+import Blogs from "../Pages/blogs/Blogs";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element:<Main></Main>,
+      children:[
+        {
+            path:"blogs",
+            element:<Blogs></Blogs>
+        }
+      ]
      
     },
     {
