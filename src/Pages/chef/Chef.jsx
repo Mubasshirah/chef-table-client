@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 const Chef = () => {
     const [chefs,setChef]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/chef')
+        fetch('https://assignment-10-chef-table-server-mubasshirah.vercel.app/chef')
         .then(res=>res.json())
         .then(data=>setChef(data))
     },[])

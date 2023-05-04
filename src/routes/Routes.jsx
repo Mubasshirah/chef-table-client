@@ -21,10 +21,10 @@ const router = createBrowserRouter([
             {
                 path:':id',
                 element:<SingleChefRecipe></SingleChefRecipe>,
-                loader:({params})=>fetch(`http://localhost:5000/chef/${params.id}`)
+                loader:({params})=>fetch(`https://assignment-10-chef-table-server-mubasshirah.vercel.app/chef/${params.id}`)
             }
         ]
-    },
+    }
     {
         path:'/',
         element:<LoginLayout></LoginLayout>,
