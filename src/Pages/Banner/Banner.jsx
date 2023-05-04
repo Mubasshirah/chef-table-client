@@ -6,7 +6,7 @@ const Banner = () => {
            <div className='position-relative ' >
            <img src={banner} alt="" style={{width:'100%',height:'100vh'}}/>
            </div>
-           <div className='position-absolute' style={{width:'100%',height:'100vh', top:'56px',backgroundColor:'rgba(0, 0, 0, 0.4)'}} >
+           <div className='position-absolute' style={{width:'100%',height:'100vh', top:'36px',backgroundColor:'rgba(0, 0, 0, 0.4)'}} >
             
             <div>
             <h1 className='text-white ' style={{fontSize:'6vw',marginLeft:'10vw',paddingTop:'150px'}}>Feel the </h1>
