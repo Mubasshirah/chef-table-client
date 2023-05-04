@@ -5,6 +5,7 @@ import Footer from '../shared/Footer/Footer';
 import Banner from '../Pages/Banner/Banner';
 import About from '../Pages/About/About';
 import Choose from '../Pages/choose/Choose';
+import Chef from '../Pages/chef/Chef';
 
 const Main = () => {
     return (
@@ -13,6 +14,7 @@ const Main = () => {
             <Banner></Banner>
             <About></About>
             <Choose></Choose>
+            <Chef></Chef>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
