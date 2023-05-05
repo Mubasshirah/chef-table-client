@@ -5,10 +5,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
-import { Button } from 'react-bootstrap';
+import { Button, NavLink } from 'react-bootstrap';
 import {  CgProfile} from "react-icons/cg";
 
 const Header = () => {
+    
     const {user,logOutUser}=useContext(AuthContext);
   
     const handleLogOut=()=>{
@@ -25,8 +26,8 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
            <Link  className='text-decoration-none text-white me-4 text-bold' to='/'>Home</Link>
-           <Link   className='text-decoration-none text-white me-4 text-bold' to='/blogs'>Blogs</Link>           
-           <Link to='/about' className='text-decoration-none text-white me-4 text-bold'>Chefs</Link>           
+           <Link  className='text-decoration-none text-white me-4 text-bold' to='/blogs'>Blogs</Link>           
+           <Link  to='/about' className='text-decoration-none text-white me-4 text-bold'>Chefs</Link>           
           </Nav>
          
           <Nav className='align-items-center'>

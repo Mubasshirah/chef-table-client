@@ -16,19 +16,19 @@ const AllRecipe = ({ recipe }) => {
   return (
     <div >
       <div className='d-lg-flex flex-lg-row align-items-center bg-white text-dark mb-4 p-3 rounded'>
-      <div className='w-lg-50'>
+      <div className=' w-100'>
         <div><img src={photo} className='mx-auto rounded img-fluid w-100' style={{ height: '300px' }} alt="" />
         </div>
         <div >
           <h3>{recipeName}</h3>
           <h5>Ingredients:</h5>
-          <hr className='w-lg-50' />
+          <hr className='w-50' />
           {
             ingredients.map(ingredient => <li style={{ listStyleType: 'none' }}>{ingredient}</li>)
           }
         </div>
       </div>
-      <div className='w-lg-50 ps-lg-4'>
+      <div className='w-100 ps-4'>
         <h5 className='mt-3'>Cooking method:</h5>
         <hr className='w-50' />
         <p>{cookingMethod}</p>
