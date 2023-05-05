@@ -33,7 +33,7 @@ const Login = () => {
         logInWithGoogle()
         .then(result=>{
             const user=result.user;
-            navigate('/');
+            navigate(from,{replace:true});
             console.log(user);
            })
            .catch(error=>{
@@ -45,7 +45,7 @@ const Login = () => {
             .then(result=>{
                 const githubUser=result.user;
                 console.log(githubUser);
-                navigate('/');
+                navigate(from,{replace:true});
                 
             })
             .catch(error=>{
