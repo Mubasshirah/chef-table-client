@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FaGoogle, FaGithub } from "react-icons/fa";
@@ -6,12 +6,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../provider/AuthProvider';
 import { signInWithPopup } from 'firebase/auth';
 const Login = () => {
+  const [error,setError]=useState('');
     const {signInUser,logInWithGoogle,logInWithGithub}=useContext(AuthContext);
     const navigate=useNavigate();
   const location=useLocation();
   const from=location?.state?.from?.pathname || '/';
     const handdleSignIn=event=>{ 
         event.preventDefault();
+        setError('');
         const form=event.target;
         const email=form.email.value;
         const password=form.password.value;
@@ -23,6 +25,7 @@ const Login = () => {
         })
         .catch(err=>{
             console.error(err)
+            setError(err.message);
         })
         form.reset()
     }
@@ -69,6 +72,7 @@ const Login = () => {
       <Button variant="outline-light" type="submit" >
         Login
       </Button>
+      <div className='text-danger'>{error}</div>
     </Form>
            </div>
            <div >

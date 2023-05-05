@@ -9,18 +9,18 @@ import ChefRecipe from "../layout/ChefRecipe";
 import SingleChefRecipe from "../Pages/SingleChefRecipe/SingleChefRecipe";
 import PrivateRoute from "./PrivateRoute";
 import Blogs from "../Pages/blogs/Blogs";
+import BlogLayout from "../layout/BlogLayout";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element:<Main></Main>,
-      children:[
-        {
-            path:"/blogs",
-            element:<Blogs></Blogs>
-        }
-      ]
+      
      
+    },
+    {
+        path:"/blogs",
+        element:<BlogLayout></BlogLayout>
     },
     {
         path:'/chef',

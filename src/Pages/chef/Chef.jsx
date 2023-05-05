@@ -11,11 +11,11 @@ const Chef = () => {
         .then(data=>setChef(data))
     },[])
     return (
-        <Container>
-            <h1 className='text-center mt-5'>Meet Out Chefs</h1>
-            <hr  className='w-25 mx-auto mb-5'/>
+        <Container className=''>
+            <h1 className='text-center text-white mt-5'>Meet Out Chefs</h1>
+            <hr  className='w-25 text-white mx-auto mb-5'/>
             
-    <div className='row'>
+    <div className='row mb-5'>
    
       {chefs.map(chef=><SingleChef key={chef.id} chef={chef}></SingleChef>)}   
       

@@ -34,7 +34,10 @@ const Header = () => {
                           { user ?
                               
                              <div>
-                                <Button variant='outline-dark' className='me-5 text-white bg-dark'><CgProfile></CgProfile><span className='ms-1'>{user.displayName}</span> </Button>
+                                
+                                <img src={user.photoURL} alt=""  style={{width:'20px',height:'20px',borderRadius:'50%',marginRight:'15px'}} data-toggle="tooltip" data-placement="top" title={user.displayName} />
+                                
+                               
                                  <Button variant="secondary" onClick={handleLogOut}>Logout</Button>
                              </div>
                               :

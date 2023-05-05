@@ -1,13 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../provider/AuthProvider';
-import { updateProfile } from 'firebase/auth';
+
 
 const Register = () => {
+
     const [error,setError]=useState('');
     const [success,setSuccess]=useState('');
-    const {user,createUser}=useContext(AuthContext);
+    const {  handleUpdate ,auth,user,createUser}=useContext(AuthContext);
+    const navigate=useNavigate();
     const handleRegister=event=>{
         event.preventDefault();
         setSuccess('');
@@ -17,23 +19,28 @@ const Register = () => {
         const password=form.password.value;
         const name=form.name.value;
         const photo=form.photo.value;
-        if(!/(?=.*[A-Z].*[A-Z])/.test(password)){
-            setError('password must have uppercase');
-            return;
+           console.log(name,photo);
+        if(email===''){
+          alert('email field cannot be empty');
+          return;
         }
-        else if(!/(?=.*[!@#$&*])/.test(password)){
-            setError('password must have special letter');
-            return;
+        if(password===''){
+          alert('password field cannot be empty');
+          return;
         }
-        else if(password.length<8){
-            setError('password must have more than eight character');
+       
+       if(password.length<6){
+            setError('password must have more than six character');
             return;
         }
         createUser(email,password)
         .then(result=>{
             const user=result.user;
-            updateProfileName(user,name,photo);
+            console.log(photo);
+            handleUpdate(name,photo)
+            
             setSuccess('seccessfully signed up')
+            navigate('/');
             console.log(user)
         })
         .catch(err=>{
@@ -43,15 +50,7 @@ const Register = () => {
         
       
     }
-    const updateProfileName=(user,name,photo)=>{
-        updateProfile(user,{displayName:name,photoUrL:photo})
-        .then(()=>{
-            console.log('user name updated')
-        })
-        .catch(error=>{
-            console.error(error.message)
-        })
-    }
+   
     return (
         <div className='d-flex flex-column align-items-center pt-5'>
         <h1 className='text-center text-bold mt-5'>Please Register</h1>

@@ -9,13 +9,13 @@ import Chef from '../Pages/chef/Chef';
 
 const Main = () => {
     return (
-        <div>
+        <div style={{backgroundImage:'url("https://us.123rf.com/450wm/somegirl/somegirl1905/somegirl190500113/124101230-authentic-indian-dishes-and-snacks.jpg?ver=6")',backgroundSize:'cover',backgroundPosition:'',backgroundRepeat:'no-repeat' }}>
             <Header></Header>
             <Banner></Banner>
             <About></About>
             <Choose></Choose>
             <Chef></Chef>
-            <Outlet></Outlet>
+            
             <Footer></Footer>
         </div>
     );

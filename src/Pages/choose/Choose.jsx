@@ -9,9 +9,11 @@ import { Container, Image } from 'react-bootstrap';
 
 const Choose = () => {
     return (
-        <Container className='my-5'>
-            <h1 className=' text-center'>Our Speciality</h1>
+        <Container className='my-5 text-white'>
+            <div className=' text-center ' >
+            <h1 >Our Speciality</h1>
             <hr className='w-25 mx-auto' />
+            </div>
             <Row xs={1} md={2} lg={3} className="g-4">
       
         <Col >

@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 const SingleChef = ({chef}) => {
     const {id,name,chefPicture,yearsOfExperience,numberOfRecipes,likes,views}=chef;
     return (
-        <div className='col-lg-4 col-sm-12'>
-            <Card className='py-4 mb-4'>
+        <div className='col-lg-4 col-sm-12 ' >
+            <Card className='py-4 mb-4' style={{boxShadow:'3px 3px 10px grey'}}>
           <Card.Img variant="top"  src={chefPicture}className='mx-auto rounded' style={{height:'200px',width:'300px'}}/>
           <Card.Body className=' text-center'>
             <Card.Title className='pb-4'>{name}</Card.Title>
